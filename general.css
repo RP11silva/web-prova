@@ -1,11 +1,11 @@
-
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
+/* Estilos do Body */
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: radial-gradient(circle, #FFCC00 0%, #006400 50%, #0033A0 100%);
@@ -13,7 +13,7 @@ body {
     color: white;
 }
 
-
+/* Header */
 header {
     position: relative;
     display: flex;
@@ -54,7 +54,7 @@ header nav a:hover {
     text-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
 }
 
-
+/* Títulos */
 h1 {
     color: #fff;
     text-align: center;
@@ -78,3 +78,17 @@ footer p {
     font-size: 16px;
 }
 
+/* Responsividade Geral */
+@media (max-width: 768px) {
+    header nav {
+        gap: 20px;
+    }
+    
+    header nav a {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}

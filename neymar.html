@@ -21,7 +21,6 @@
       margin: 10px;
       padding: 20px;
       border-radius: 10px;
-      transition: background 0.3s;
     }
 
     body.divClara .play {
@@ -31,7 +30,52 @@
     body.divEscura .play {
       background-color: #222;
     }
+    .formulario {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.formulario h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formulario input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formulario button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #006400;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #004d00;
+}
+
+#mensagem {
+  margin-top: 15px;
+  color: green;
+  text-align: center;
+}
+
   </style>
+
 </head>
 <body>
   <header>
@@ -45,6 +89,8 @@
   </nav>
 </header>
 
+</section>
+
 
   <h1 id="titulo">Neymar Jr na Seleção Brasileira</h1>
 
@@ -53,6 +99,21 @@
   <section class="play"><p id="p3"></p></section>
   <section class="play"><p id="p4"></p></section>
   <section class="play"><p id="p5"></p></section>
+
+
+  <section class="formulario">
+  <h2>Contato</h2>
+  <form id="formContato">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+  <p id="mensagem"></p>
+</section>
 
   <script>
     const textos = {
@@ -78,16 +139,40 @@
     const temaSalvo = localStorage.getItem('modoEscuro');
     const modoEscuro = temaSalvo === 'true';
 
-    // Aplica tema
+    
     document.body.className = modoEscuro ? 'divEscura' : 'divClara';
 
-    // Aplica idioma
+    
     document.getElementById('titulo').innerHTML = textos[idiomaSalvo].titulo;
     document.getElementById('p1').innerHTML = textos[idiomaSalvo].p1;
     document.getElementById('p2').innerHTML = textos[idiomaSalvo].p2;
     document.getElementById('p3').innerHTML = textos[idiomaSalvo].p3;
     document.getElementById('p4').innerHTML = textos[idiomaSalvo].p4;
     document.getElementById('p5').innerHTML = textos[idiomaSalvo].p5;
-  </script>
+ 
+    document.getElementById('formContato').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const mensagem = document.getElementById('mensagem');
+
+  if (nome === '' || email === '') {
+    mensagem.textContent = 'Por favor, preencha todos os campos.';
+    mensagem.style.color = 'red';
+    return;
+  }
+
+  mensagem.textContent = `Obrigado pelo contato, ${nome}!`;
+
+
+  
+  this.reset();
+});
+
+ </script>
+ <footer>
+    <p>&copy; 2025 Seleção Brasileira. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>

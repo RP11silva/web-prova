@@ -1,4 +1,4 @@
-/* Seletor de Idioma */
+
 .linguagem {
     margin: 20px;
     text-align: center;
@@ -15,7 +15,7 @@
     margin: 0 auto;
 }
 
-/* Cards dos Jogadores */
+
 .infoJogador {
     flex: 1;
     min-width: 300px;
@@ -52,7 +52,7 @@
     height: 170px;
     border-radius: 50%;
     margin-bottom: 20px;
-    border: 4px solid #e1cd7e;
+    border: 4px solid #FFCC00;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -123,4 +123,64 @@
         flex-direction: column;
         align-items: center;
     }
+}
+
+/* ESTILOS DO POPUP */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: linear-gradient(135deg, #FFCC00 0%, #006400 50%, #0033A0 100%);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.7);
+  transition: transform 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.popup-overlay.active .popup-content {
+  transform: scale(1);
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  float: right;
+}
+
+.close-btn:hover {
+  background: rgba(255, 204, 0, 0.8);
+  color: #0033A0;
+  transform: rotate(90deg);
 }

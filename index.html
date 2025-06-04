@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brasil - Seleção Brasileira</title>
+  
+  <!-- CSS Files -->
   <link rel="stylesheet" href="general.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,16 +13,15 @@
   <header>
     <a href="index.html">
       <img src="https://logodownload.org/wp-content/uploads/2017/11/cbf-logo-selecao-logo-brasil.png" 
-           alt="Logo da CBF">
+           alt="Logo da CBF - Confederação Brasileira de Futebol">
     </a>
     <nav>
       <a href="neymar.html">Neymar</a>
-      <h2>X</h2>
-      <a href="ronaldinho.html">Ronaldinho</a>
+      <a href="ronaldo.html">Ronaldinho</a>
     </nav>
   </header>
 
-  <div class="linguagem">
+  <div class="language-selector">
     <label for="idioma">Idioma / Language:</label>
     <select id="idioma" onchange="trocarIdioma(this.value)">
       <option value="pt">Português</option>
@@ -44,13 +45,13 @@
     </div>
   </section>
 
-  <div class="modos">
-    <div class="modostema">
+  <div class="theme-controls">
+    <div class="theme-toggle">
       <button class="theme-btn active" id="lightBtn" onclick="setTema(false)">
-         Modo Claro
+        ☀️ Modo Claro
       </button>
       <button class="theme-btn" id="darkBtn" onclick="setTema(true)">
-         Modo Escuro
+        🌙 Modo Escuro
       </button>
     </div>
   </div>
