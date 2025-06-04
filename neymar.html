@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="general.css" />
+  <title>Brasil</title>
+
+  <style>
+    body.divClara {
+      background-color: white;
+      color: black;
+    }
+
+    body.divEscura {
+      background-color: #111;
+      color: white;
+    }
+
+    .play {
+      margin: 10px;
+      padding: 20px;
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+
+    body.divClara .play {
+      background-color: #f4f4f4;
+    }
+
+    body.divEscura .play {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <a href="index.html">
+    <img src="https://logodownload.org/wp-content/uploads/2017/11/cbf-logo-selecao-logo-brasil.png" alt="Logo">
+  </a>
+  <nav>
+    <a href="neymar.html">Neymar</a>
+    <a>X</a>
+    <a href="ronaldo.html">Ronaldinho</a>
+  </nav>
+</header>
+
+
+  <h1 id="titulo">Neymar Jr na Seleção Brasileira</h1>
+
+  <section class="play"><p id="p1"></p></section>
+  <section class="play"><p id="p2"></p></section>
+  <section class="play"><p id="p3"></p></section>
+  <section class="play"><p id="p4"></p></section>
+  <section class="play"><p id="p5"></p></section>
+
+  <script>
+    const textos = {
+      pt: {
+        titulo: "Neymar Jr na Seleção Brasileira",
+        p1: "<strong>Neymar Jr</strong>, um dos maiores ícones do futebol brasileiro, encantou o mundo com seu talento desde cedo.",
+        p2: "Ao longo de sua carreira na seleção, Neymar participou de mais de 120 partidas, marcando gols decisivos e liderando a equipe em diversas competições.",
+        p3: "Outro momento histórico foi em 2016, quando liderou o Brasil à conquista inédita da medalha de ouro olímpica no Rio de Janeiro.",
+        p4: "Além de suas conquistas, Neymar também enfrentou desafios, como lesões importantes em momentos cruciais.",
+        p5: "A trajetória de Neymar na Seleção Brasileira é um reflexo de sua genialidade, carisma e paixão pelo futebol."
+      },
+      en: {
+        titulo: "Neymar Jr in the Brazilian National Team",
+        p1: "<strong>Neymar Jr</strong>, one of Brazil’s greatest football icons, amazed the world with his talent from a young age.",
+        p2: "Throughout his career with the national team, Neymar played over 120 matches, scoring decisive goals and leading the team in major competitions.",
+        p3: "One historic moment came in 2016, when he led Brazil to its first Olympic gold medal at the Rio de Janeiro Games.",
+        p4: "In addition to his achievements, Neymar also faced challenges, including key injuries at crucial times.",
+        p5: "Neymar’s journey with the Brazilian National Team reflects his brilliance, charisma, and love for the game."
+      }
+    };
+
+    const idiomaSalvo = localStorage.getItem('idioma') || 'pt';
+    const temaSalvo = localStorage.getItem('modoEscuro');
+    const modoEscuro = temaSalvo === 'true';
+
+    // Aplica tema
+    document.body.className = modoEscuro ? 'divEscura' : 'divClara';
+
+    // Aplica idioma
+    document.getElementById('titulo').innerHTML = textos[idiomaSalvo].titulo;
+    document.getElementById('p1').innerHTML = textos[idiomaSalvo].p1;
+    document.getElementById('p2').innerHTML = textos[idiomaSalvo].p2;
+    document.getElementById('p3').innerHTML = textos[idiomaSalvo].p3;
+    document.getElementById('p4').innerHTML = textos[idiomaSalvo].p4;
+    document.getElementById('p5').innerHTML = textos[idiomaSalvo].p5;
+  </script>
+</body>
+</html>

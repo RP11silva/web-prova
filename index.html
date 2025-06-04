@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brasil - Seleção Brasileira</title>
+  <link rel="stylesheet" href="general.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="https://logodownload.org/wp-content/uploads/2017/11/cbf-logo-selecao-logo-brasil.png" 
+           alt="Logo da CBF">
+    </a>
+    <nav>
+      <a href="neymar.html">Neymar</a>
+      <h2>X</h2>
+      <a href="ronaldinho.html">Ronaldinho</a>
+    </nav>
+  </header>
+
+  <div class="linguagem">
+    <label for="idioma">Idioma / Language:</label>
+    <select id="idioma" onchange="trocarIdioma(this.value)">
+      <option value="pt">Português</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+
+  <h1 id="pageTitle">Lendas da Seleção Brasileira</h1>
+
+  <section class="container">
+    <div class="infoJogador divClara" id="jogador1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7RM4bEOHL0Qm7aHkKu81isTlbQ_ZpiHrkw&s" 
+           alt="Neymar Jr - Jogador da Seleção Brasileira">
+      <ul id="neymarStats"></ul>
+    </div>
+
+    <div class="infoJogador divClara" id="jogador2">
+      <img src="https://acdn-us.mitiendanube.com/stores/002/935/203/products/camisa-retro-brasil-2002-azul-reserva-ronaldinho-310d5dd73af6274c9517120095078380-480-0.png" 
+           alt="Ronaldinho Gaúcho - Jogador da Seleção Brasileira">
+      <ul id="ronaldoStats"></ul>
+    </div>
+  </section>
+
+  <div class="modos">
+    <div class="modostema">
+      <button class="theme-btn active" id="lightBtn" onclick="setTema(false)">
+         Modo Claro
+      </button>
+      <button class="theme-btn" id="darkBtn" onclick="setTema(true)">
+         Modo Escuro
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Seleção Brasileira. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JavaScript File -->
+  <script src="index.js"></script>
+</body>
+</html>

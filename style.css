@@ -1,0 +1,126 @@
+/* Seletor de Idioma */
+.linguagem {
+    margin: 20px;
+    text-align: center;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cards dos Jogadores */
+.infoJogador {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.infoJogador:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Temas */
+.divClara {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #0033A0;
+}
+
+.divEscura {
+    background: linear-gradient(135deg, 
+        rgba(255, 204, 0, 0.9) 0%, 
+        rgba(0, 100, 0, 0.9) 50%, 
+        rgba(0, 51, 160, 0.9) 100%);
+    color: white;
+}
+
+/* Imagens dos Jogadores */
+.infoJogador img {
+    width: 120px;
+    height: 170px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #e1cd7e;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.infoJogador:hover img {
+    transform: scale(1.05);
+}
+
+/* Listas de Estatísticas */
+.infoJogador ul {
+    list-style: none;
+    padding: 0;
+}
+
+.infoJogador li {
+    padding: 8px 0;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+    margin-bottom: 5px;
+}
+
+.infoJogador li:last-child {
+    border-bottom: none;
+}
+
+.divClara li {
+    border-bottom-color: rgba(0, 51, 160, 0.2);
+}
+
+/* Controles de Tema */
+.modos {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.modostema {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 5px;
+    border: 2px solid #FFCC00;
+}
+
+.theme-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: white;
+}
+
+.theme-btn.active {
+    background: #FFCC00;
+    color: #0033A0;
+}
+
+.theme-btn:hover:not(.active) {
+    background: rgba(255, 204, 0, 0.2);
+}
+
+
+@media (max-width: px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
